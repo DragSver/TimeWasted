@@ -43,14 +43,16 @@ class ActivityFragment : Fragment() {
         isConnected()
 
         binding.buttonGetActivity.setOnClickListener {
-            lifecycleScope.launch {
-                getData()
-                if (viewModel.activityLiveData.value != null) {
-                    viewModel.setFavoriteButton(binding.favoriteButton, viewModel.activityLiveData.value!!)
+            if(isConnected()) {
+                lifecycleScope.launch {
+                    getData()
+                    if (viewModel.activityLiveData.value != null) {
+                        viewModel.setFavoriteButton(binding.favoriteButton, viewModel.activityLiveData.value!!)
+                    }
                 }
-            }
-            if (binding.layoutActivity.visibility == View.GONE) {
-                binding.layoutActivity.visibility = View.VISIBLE
+                if (binding.layoutActivity.visibility == View.GONE) {
+                    binding.layoutActivity.visibility = View.VISIBLE
+                }
             }
         }
 
@@ -80,11 +82,12 @@ class ActivityFragment : Fragment() {
         viewModel.getData()
     }
 
-    private fun isConnected() {
+    private fun isConnected() : Boolean {
         if (!connectionManager.isConnected()) {
             binding.unsuccessfulInternetConnectionText.visibility = View.VISIBLE
             binding.buttonGetActivity.visibility = View.GONE
             binding.layoutActivity.visibility = View.GONE
+            return false
         } else {
             if (viewModel.activityLiveData.value != null) {
                 binding.layoutActivity.visibility = View.VISIBLE
@@ -92,6 +95,7 @@ class ActivityFragment : Fragment() {
             }
             binding.buttonGetActivity.visibility = View.VISIBLE
             binding.unsuccessfulInternetConnectionText.visibility = View.GONE
+            return true
         }
     }
 }
