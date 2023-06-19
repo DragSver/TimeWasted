@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_xml"
+    app:startDestination="@id/activity_fragment">
+
+    <fragment
+        android:id="@+id/activity_fragment"
+        android:name="com.example.timewaster.ActivityFragment"
+        tools:layout="@layout/short_activity_fragment">
+        <action
+            android:id="@+id/action_activity_fragment_to_favorite_activities_fragment"
+            app:destination="@id/favorite_activities_fragment" />
+        <action
+            android:id="@+id/action_activity_fragment_to_long_activity_fragment"
+            app:destination="@id/long_activity_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favorite_activities_fragment"
+        android:name="com.example.timewaster.FavoriteActivitiesFragment"
+        tools:layout="@layout/favorite_activity_fragment">
+        <action
+            android:id="@+id/action_favorite_activities_fragment_to_activity_fragment"
+            app:destination="@id/activity_fragment" />
+        <action
+            android:id="@+id/action_favorite_activities_fragment_to_long_activity_fragment"
+            app:destination="@id/long_activity_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/long_activity_fragment"
+        android:name="com.example.timewaster.LongActivityFragment"
+        tools:layout="@layout/long_activity_fragment">
+        <action
+            android:id="@+id/action_long_activity_fragment_to_favorite_activities_fragment"
+            app:destination="@id/favorite_activities_fragment" />
+        <action
+            android:id="@+id/action_long_activity_fragment_to_activity_fragment"
+            app:destination="@id/activity_fragment" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Time Waster</string>
+    <string name="text_activity">Some very interesting and long activity</string>
+    <string name="get_activity_button">Get activity</string>
+    <string name="unsuccessful_internet_connection">Unsuccessful Internet connection</string>
+    <string name="more_information_activity">Click here for more information</string>
+    <string name="favorite">Favorite</string>
+    <string name="remove_favorite">Remove favorite</string>
+    <string name="open_favorite_button">Open Favorite</string>
+    <string name="type">Type:</string>
+    <string name="participants">Participants:</string>
+    <string name="price">Price:</string>
+    <string name="link">Link:</string>
+    <string name="key">Key:</string>
+    <string name="accessibility">Accessibility:</string>
+</resources>
