@@ -40,15 +40,7 @@ class ActivityFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity())[ActivityViewModel::class.java]
         navController = Navigation.findNavController(view)
 
-        if (!connectionManager.isConnected()) {
-            binding.unsuccessfulInternetConnectionText.visibility = View.VISIBLE
-            binding.buttonGetActivity.visibility = View.GONE
-        }
-
-        if (viewModel.activityLiveData.value != null) {
-            binding.layoutActivity.visibility = View.VISIBLE
-            viewModel.setFavoriteButton(binding.favoriteButton, viewModel.activityLiveData.value!!)
-        }
+        isConnected()
 
         binding.buttonGetActivity.setOnClickListener {
             lifecycleScope.launch {
@@ -74,6 +66,11 @@ class ActivityFragment : Fragment() {
             }
         }
 
+        binding.swipeContainer.setOnRefreshListener {
+            isConnected()
+            binding.swipeContainer.isRefreshing = false
+        }
+
         viewModel.activityLiveData.observe(viewLifecycleOwner, Observer { activity ->
             binding.activityText.text = activity.activity
         })
@@ -81,5 +78,20 @@ class ActivityFragment : Fragment() {
 
     private suspend fun getData() {
         viewModel.getData()
+    }
+
+    private fun isConnected() {
+        if (!connectionManager.isConnected()) {
+            binding.unsuccessfulInternetConnectionText.visibility = View.VISIBLE
+            binding.buttonGetActivity.visibility = View.GONE
+            binding.layoutActivity.visibility = View.GONE
+        } else {
+            if (viewModel.activityLiveData.value != null) {
+                binding.unsuccessfulInternetConnectionText.visibility = View.GONE
+                binding.layoutActivity.visibility = View.VISIBLE
+                binding.buttonGetActivity.visibility = View.VISIBLE
+                viewModel.setFavoriteButton(binding.favoriteButton, viewModel.activityLiveData.value!!)
+            }
+        }
     }
 }

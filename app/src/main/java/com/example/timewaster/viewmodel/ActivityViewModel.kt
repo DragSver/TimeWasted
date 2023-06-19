@@ -20,13 +20,14 @@ class ActivityViewModel : ViewModel() {
 
     var sharedPreferences : SharedPreferences? = null
     var jsonActivities: String? = null
-    var activities = mutableListOf<Activity>()
+    var activitiesLiveData = MutableLiveData<MutableList<Activity>>()
 
     @Inject lateinit var useCase: UseCase
 
     fun init(context: Context) {
         DaggerAppComponent.builder().build().inject(this)
 
+        activitiesLiveData.value = mutableListOf()
         sharedPreferences = context.getSharedPreferences("Preferences", Context.MODE_PRIVATE)
         if (sharedPreferences != null && !sharedPreferences!!.contains("activities")) {
             putPreferences()
@@ -36,11 +37,11 @@ class ActivityViewModel : ViewModel() {
     }
 
     fun switchFavorite(activity: Activity, button: ImageButton) {
-        if (activities.contains(activity)){
-            activities.remove(activity)
+        if (activitiesLiveData.value!!.contains(activity)){
+            activitiesLiveData.value!!.remove(activity)
             button.setImageResource(R.drawable.baseline_favorite_border_24)
         } else {
-            activities.add(activity)
+            activitiesLiveData.value!!.add(activity)
             button.setImageResource(R.drawable.baseline_favorite_24)
         }
         putPreferences()
@@ -48,16 +49,16 @@ class ActivityViewModel : ViewModel() {
 
     fun getPreferences() {
         jsonActivities = sharedPreferences?.getString("activities", null)
-        activities = Gson().fromJson(jsonActivities, Array<Activity>::class.java).toMutableList()
+        activitiesLiveData.value = Gson().fromJson(jsonActivities, Array<Activity>::class.java).toMutableList()
     }
 
     fun putPreferences() {
-        jsonActivities = Gson().toJson(activities)
+        jsonActivities = Gson().toJson(activitiesLiveData.value)
         sharedPreferences?.edit()?.putString("activities", jsonActivities)?.apply()
     }
 
     fun setFavoriteButton(button: ImageButton, activity: Activity) {
-        if (activities.contains(activity)) {
+        if (activitiesLiveData.value!!.contains(activity)) {
             button.setImageResource(R.drawable.baseline_favorite_24)
         } else {
             button.setImageResource(R.drawable.baseline_favorite_border_24)

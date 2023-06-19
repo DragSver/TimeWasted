@@ -24,8 +24,6 @@ class FavoriteActivitiesFragment : Fragment() {
 
     lateinit var viewModel: ActivityViewModel
 
-    val favoriteActivitiesLiveData = MutableLiveData<List<Activity>>()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,12 +31,11 @@ class FavoriteActivitiesFragment : Fragment() {
         viewModel = ViewModelProvider(requireActivity())[ActivityViewModel::class.java]
         binding = FavoriteActivityFragmentBinding.inflate(layoutInflater)
         binding.rcView.layoutManager = LinearLayoutManager(context)
-        favoriteActivitiesLiveData.value = viewModel.activities
 
-//        binding.swipeContainer.setOnRefreshListener {
-//            getPreferences()
-//            binding.swipeContainer.isRefreshing = false
-//        }
+        binding.swipeContainer.setOnRefreshListener {
+            adapter.submitList(viewModel.activitiesLiveData.value)
+            binding.swipeContainer.isRefreshing = false
+        }
 
         return binding.root
     }
@@ -47,12 +44,12 @@ class FavoriteActivitiesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         navController = Navigation.findNavController(view)
-        if (viewModel.sharedPreferences != null) {
-            adapter = Adapter(viewModel, navController!!)
-        }
+        adapter = Adapter(viewModel, navController!!)
         binding.rcView.adapter = adapter
 
-        favoriteActivitiesLiveData.observe(viewLifecycleOwner, Observer { activities ->
+        viewModel.activitiesLiveData.observe(viewLifecycleOwner, Observer { activities ->
+            adapter = Adapter(viewModel, navController!!)
+            binding.rcView.adapter = adapter
             adapter.submitList(activities)
         })
     }
