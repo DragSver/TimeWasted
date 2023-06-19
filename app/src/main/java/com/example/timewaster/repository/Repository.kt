@@ -5,4 +5,6 @@ import retrofit2.Response
 
 interface Repository {
     suspend fun getRandomActivity(): Response<Activity>
+    suspend fun getByKey(key : String): Response<Activity>
+    suspend fun getByType(type : String): Response<Activity>
 }

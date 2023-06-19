@@ -1,6 +1,7 @@
 package com.example.timewaster
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = MainBinding.inflate(layoutInflater)
         viewModel = ViewModelProvider(this)[ActivityViewModel::class.java]
-        viewModel.init(this)
+        viewModel.init(this, binding)
 
         navController =
             (supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment).navController
@@ -44,6 +45,21 @@ class MainActivity : AppCompatActivity() {
             favoriteItem?.setIcon(R.drawable.baseline_favorite_border_24)
         }
 
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            clearSettings()
+            if (binding.checkboxType.isChecked) {
+                binding.radioGroupType.visibility = View.VISIBLE
+            }
+            if (binding.checkboxKey.isChecked) {
+                binding.searchKey.visibility = View.VISIBLE
+            }
+        }
+
         setContentView(binding.root)
+    }
+
+    fun clearSettings() {
+        binding.radioGroupType.visibility = View.GONE
+        binding.searchKey.visibility = View.GONE
     }
 }

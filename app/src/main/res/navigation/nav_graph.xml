@@ -40,5 +40,4 @@
             android:id="@+id/action_long_activity_fragment_to_activity_fragment"
             app:destination="@id/activity_fragment" />
     </fragment>
-
 </navigation>
