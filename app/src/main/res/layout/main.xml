@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C7D1D0">
+    android:background="@color/white">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Time Waster"
-            app:titleTextColor="#E6FFFFFF"
+            app:titleTextColor="@color/white"
             android:background="#14471E"
             app:menu="@menu/top_app_bar_title"
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
@@ -82,8 +82,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:textColor="#14471E"
-                    android:buttonTint="#14471E"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_type"
                     android:layout_width="match_parent"
@@ -92,8 +92,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:textColor="#14471E"
-                    android:buttonTint="#14471E"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_key"
                     android:layout_width="match_parent"
@@ -102,8 +102,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    android:textColor="#14471E"
-                    android:buttonTint="#14471E"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
             </RadioGroup>
 
             <RadioGroup
@@ -121,8 +121,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_recreational"
                     android:layout_width="match_parent"
@@ -131,8 +131,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_social"
                     android:layout_width="match_parent"
@@ -141,8 +141,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_diy"
                     android:layout_width="match_parent"
@@ -151,8 +151,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_charity"
                     android:layout_width="match_parent"
@@ -161,8 +161,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_cooking"
                     android:layout_width="match_parent"
@@ -171,8 +171,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_relaxation"
                     android:layout_width="match_parent"
@@ -181,8 +181,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_music"
                     android:layout_width="match_parent"
@@ -191,8 +191,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
                 <RadioButton
                     android:id="@+id/checkbox_busywork"
                     android:layout_width="match_parent"
@@ -201,8 +201,8 @@
                     android:layout_marginStart="5dp"
                     android:textSize="22sp"
                     android:textStyle="bold"
-                    android:textColor="#C7D1D0"
-                    android:buttonTint="#C7D1D0"/>
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"/>
             </RadioGroup>
             <com.google.android.material.textfield.TextInputEditText
                 android:hint="Search key"
@@ -215,7 +215,7 @@
                 android:text=""
                 android:layout_marginStart="20dp"
                 android:layout_marginVertical="5dp"
-                android:background="#C7D1D0"
+                android:background="@color/white"
                 android:textSize="18sp"
                 android:visibility="gone"/>
         </LinearLayout>

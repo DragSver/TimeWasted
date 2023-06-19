@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FavoriteActivitiesFragment"
-    android:background="#C7D1D0">
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/long_activity_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C7D1D0">
+        android:background="@color/white">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_activity"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:gravity="center_vertical"
-                android:textColor="#C7D1D0"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
         </androidx.cardview.widget.CardView>
@@ -60,7 +60,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/type"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <TextView
@@ -70,7 +70,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -98,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/participants"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <TextView
@@ -108,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -136,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/price"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <TextView
@@ -146,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -174,7 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/link"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <TextView
@@ -184,7 +184,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -212,7 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/accessibility"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
                 <TextView
@@ -222,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -251,7 +251,7 @@
                     android:layout_marginVertical="20dp"
                     android:layout_marginStart="30dp"
                     android:text="@string/key"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
@@ -262,7 +262,7 @@
                     android:layout_marginVertical="20dp"
                     android:layout_marginStart="10dp"
                     android:text=""
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>

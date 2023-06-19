@@ -87,11 +87,11 @@ class ActivityFragment : Fragment() {
             binding.layoutActivity.visibility = View.GONE
         } else {
             if (viewModel.activityLiveData.value != null) {
-                binding.unsuccessfulInternetConnectionText.visibility = View.GONE
                 binding.layoutActivity.visibility = View.VISIBLE
-                binding.buttonGetActivity.visibility = View.VISIBLE
                 viewModel.setFavoriteButton(binding.favoriteButton, viewModel.activityLiveData.value!!)
             }
+            binding.buttonGetActivity.visibility = View.VISIBLE
+            binding.unsuccessfulInternetConnectionText.visibility = View.GONE
         }
     }
 }
